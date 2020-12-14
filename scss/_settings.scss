@@ -99,7 +99,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+// $header-font-family: $header-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -114,6 +114,7 @@ $header-styles: (
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
     'h6': ('font-size': 16),
+    'p': ('font-size': 18),
   ),
   medium: (
     'h1': ('font-size': 48),
@@ -122,6 +123,7 @@ $header-styles: (
     'h4': ('font-size': 25),
     'h5': ('font-size': 20),
     'h6': ('font-size': 16),
+    'p': ('font-size': 20),
   ),
 );
 $header-text-rendering: optimizeLegibility;

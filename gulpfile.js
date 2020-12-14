@@ -9,7 +9,7 @@ var sassPaths = [
 ];
 
 function sass() {
-  return gulp.src('scss/*.scss')
+  return gulp.src('scss/hf.scss')
     .pipe($.sass({
       includePaths: sassPaths,
       outputStyle: 'compressed' // if css compressed **file size**
@@ -23,12 +23,12 @@ function sass() {
 };
 
 function serve() {
-  browserSync.init({
-    server: "./"
-  });
+  // browserSync.init({
+  //   server: "./"
+  // });
 
-  gulp.watch("scss/*.scss", sass);
-  gulp.watch("*.html").on('change', browserSync.reload);
+  gulp.watch("scss/hf.scss", sass);
+  // gulp.watch("*.html").on('change', browserSync.reload);
 }
 
 gulp.task('sass', sass);

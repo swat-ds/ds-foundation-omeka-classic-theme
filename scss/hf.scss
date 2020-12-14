@@ -1,0 +1,174 @@
+/* 
+
+swarthmore digital scholarship / omeka classic foundation child theme
+
+*/
+
+@charset 'utf-8';
+
+@import 'globals-default';
+
+/*   define fonts   */
+
+/* blackout */
+@font-face {
+    font-family: 'Blackout';
+    font-style: normal;
+    src: local(''),
+         url('../fonts/blackout_two_am-webfont.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  /* spartan-regular - latin */
+@font-face {
+    font-family: 'Spartan';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+         url('../fonts/spartan-v2-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/spartan-v2-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  
+  /* spartan-800 - latin */
+  @font-face {
+    font-family: 'Spartan';
+    font-style: bold;
+    font-weight: 800;
+    src: local(''),
+         url('../fonts/spartan-v2-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/spartan-v2-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  /* fanwood-regular */
+@font-face {
+    font-family: 'Fanwood';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/fanwood-webfont.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  
+  /* fanwood-italic */
+  @font-face {
+    font-family: 'Fanwood';
+    font-style: italic;
+    src: local(''),
+         url('../fonts/fanwood_italic-webfont.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+/*   defines local foundation settings   */
+
+$foundation-palette: (
+  primary: #154219,
+  secondary: #f1eeda,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+
+$body-font-family: 'Fanwood', serif;
+$header-font-family: 'Spartan', sans-serif;
+
+@import 'settings';
+
+// local settings
+
+$subheader-font-family: $header-font-family;
+
+$topbar-background: $primary-color;
+$thumbnail-border: unset;
+$thumbnail-shadow: 0 0 6px 1px rgba($primary-color, 0.5);
+$thumbnail-shadow-hover: 0 0 8px 1px rgba($primary-color, 0.75);
+
+$button-background: $secondary-color;
+$button-background-hover: darken($secondary-color, 15%);
+$button-color: $primary-color;
+
+$base-border: .5rem solid $primary-color;
+
+@import 'foundation-core';
+@import 'omeka';
+
+// custom styles
+
+body.horizontal-menu {
+  background-color: rgba($secondary-color,.1);
+  border: $base-border;
+}
+body.horizontal-menu footer {
+  border-top-width: .25rem;
+}
+
+body.horizontal-menu header a {
+  color: $secondary-color;
+}
+
+header a,
+footer a {
+  text-decoration: none;
+}
+
+header,
+footer,
+.property dt,
+.property dl,
+.property.tags,
+.quotation,
+.caption p,
+.browse-controls,
+#advanced-search,
+.site-page-pagination,
+.item-pagination {
+  font-family: $header-font-family;
+}
+
+body.horizontal-menu #content,
+body.horizontal-menu footer {
+    padding-left: 10rem;
+    @include breakpoint(medium down) {
+      padding-left: 1rem;
+    }
+    @media screen and (min-width: 1450px) {
+      padding-right: 10rem;
+    }
+}
+
+body.horizontal-menu #content {
+
+  p,
+  .callout,
+  .property {
+    max-width: 680px;
+  }
+}
+
+.resource.show #resource-values {
+  order: 2;
+  @include xy-cell(4);
+  margin-left: 0;
+  
+  @include breakpoint(medium down) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.resource.show .media-embed,
+.resource.show .media-list {
+  order: 1;
+  @include xy-cell(8);
+  margin: 0;
+  
+  @include breakpoint(medium down) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.site-title {
+  font-family: "Blackout";
+  font-size: 200%;
+}
+
+.breadcrumbs {
+  font-family: $header-font-family;
+}
